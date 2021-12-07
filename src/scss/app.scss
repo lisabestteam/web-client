@@ -1,0 +1,178 @@
+@import './variables';
+@import './mixins';
+@import '../../node_modules/@mdi/font/css/materialdesignicons.min.css';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+body,
+input,
+select,
+button,
+textarea {
+  background: $col-app-background;
+  color: $col-primary;
+  font-weight: 400;
+}
+
+textarea,
+button,
+select,
+input,
+body,
+span,
+p {
+  font-size: 2rem;
+  font-family: 'Roboto';
+
+  @include respond-to-custom($sidebar-hide-bp) {
+    font-size: 1.6rem;
+  }
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  cursor: pointer;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+
+  /* Remove excess padding and border in Firefox 4+ */
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+body, p, li, ul {
+  color: $col-text;
+}
+
+
+input,
+textarea {
+  width: 100%;
+}
+
+html {
+  font-size: 10px;
+  // Fixes the bug:
+  // https://www.igorkromin.net/index.php/2016/05/20/mobile-safari-scrolling-problem-with-an-input-field-inside-a-fixed-div/
+  overflow: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+p {
+  line-height: 2;
+
+  @include respond-to-custom($sidebar-hide-bp) {
+    line-height: 1.85;
+  }
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 6.4rem;
+  line-height: 1.2;
+
+  @include respond-to-custom($sidebar-hide-bp) {
+    font-size: 3.6rem;
+  }
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 3.6rem;
+  line-height: 1.2;
+
+  @include respond-to-custom($sidebar-hide-bp) {
+    font-size: 2.4rem;
+  }
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 1.2;
+
+  @include respond-to-custom($sidebar-hide-bp) {
+    font-size: 2.2rem;
+  }
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1.2;
+
+  @include respond-to-custom($sidebar-hide-bp) {
+    font-size: 1.6rem;
+  }
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.2;
+
+  @include respond-to-custom($sidebar-hide-bp) {
+    font-size: 1.2rem;
+  }
+}
+
+a {
+  font-size: 1.4rem;
+  line-height: $app-link-line-height;
+  color: $col-link;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100vh;
+  background-color: $col-app-content-background;
+
+  & ul {
+    list-style-type: none;
+  }
+}
+
+.app__content-block {
+  border-radius: 1.6rem;
+  background: #ffffff;
+  padding: 3.3rem;
+}

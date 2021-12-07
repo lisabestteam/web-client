@@ -6,6 +6,19 @@
   </div>
 </template>
 
+<script>
+import { initApi } from '@api'
+
+export default {
+  name: 'app-content',
+
+  async created () {
+    await initApi()
+    console.log(123)
+  },
+}
+</script>
+
 <style lang="scss">
 
 </style>

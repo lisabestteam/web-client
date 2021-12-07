@@ -48,8 +48,8 @@ module.exports = {
     plugins: [
       new CopyWebpackPlugin([
         {
-          from: path.resolve(__dirname, resolveApp('static')),
-          to: 'static',
+          from: path.resolve(__dirname, resolveApp('static/env.js')),
+          to: 'static/env.js',
         },
       ]),
       ...optionalPlugins,
@@ -63,6 +63,7 @@ module.exports = {
         '@locales': `${root}/i18n`,
         '@/vuex': `${root}/vuex`,
         '@/vue-router': `${root}/vue-router`,
+        '@api': `${root}/api`,
       },
     },
   },
