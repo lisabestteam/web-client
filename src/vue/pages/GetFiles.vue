@@ -45,7 +45,7 @@
               <i class="mdi mdi-download get-files-page__file-download-icon" />
             </button>
           </template>
-          <template>
+          <template v-else>
             <p>
               {{ 'No files available' }}
             </p>

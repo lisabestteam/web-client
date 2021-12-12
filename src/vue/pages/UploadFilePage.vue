@@ -6,8 +6,7 @@
           <file-field
             name="upload-file"
             v-model="form.file"
-            :note="'drop-form.logo-note'"
-            :placeholder="'drop-form.logo-lbl'"
+            :placeholder="'Select a file'"
             :min-width="120"
             :min-height="120"
             :max-size="20"

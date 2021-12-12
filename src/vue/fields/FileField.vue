@@ -38,7 +38,7 @@
         </div>
 
         <div class="file-field__selected-file">
-          {{ `file-field.selected-file (${document.name })` }}
+          {{ `Selected file (${document.name })` }}
         </div>
       </template>
 
@@ -57,15 +57,15 @@
               </template>
 
               <template v-else-if="isFileDragged">
-                {{ 'file-field.drop-file-title' }}
+                {{ 'Drop the file here' }}
               </template>
 
               <template v-else-if="document">
-                {{ 'file-field.upload-another-file-title' }}
+                {{ 'Drag another file here or click to browse' }}
               </template>
 
               <template v-else>
-                {{ 'file-field.upload-file-title' }}
+                {{ 'Drag a file here or click to browse' }}
               </template>
             </p>
 
