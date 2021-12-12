@@ -5,6 +5,7 @@ const fs = require('fs')
 const appDirectory = fs.realpathSync(process.cwd())
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
 const root = path.resolve(__dirname, resolveApp('src'))
+const { IgnorePlugin } = require('webpack')
 const { ArgumentParser } = require('argparse')
 
 const parser = new ArgumentParser({
@@ -46,6 +47,7 @@ module.exports = {
   configureWebpack: {
     devtool: process.env.NODE_ENV === 'production' ? 'false' : 'source-map',
     plugins: [
+      new IgnorePlugin(/ed25519/),
       new CopyWebpackPlugin([
         {
           from: path.resolve(__dirname, resolveApp('static/env.js')),
