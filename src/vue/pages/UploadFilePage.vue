@@ -18,7 +18,7 @@
       <template v-if="currentStep === STEPS.step2">
         <div class="upload-file-page__second-step">
           <h1 class="upload-file-page__header">
-            {{ 'Generate password' }}
+            {{ 'Enter data' }}
           </h1>
 
           <input-field

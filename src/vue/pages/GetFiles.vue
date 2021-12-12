@@ -6,19 +6,19 @@
           v-model="form.privateKey"
           class="get-files-page__input"
           name="change-password-current-password"
-          label="My Public key"
+          label="My secret key"
         />
 
         <input-field
           v-model="form.publicKey"
           class="get-files-page__input"
           name="change-password-current-password"
-          label="My Secret key"
+          label="My public key"
         />
 
         <app-button
           class="get-files-page__generate-pass-btn"
-          text="Generate"
+          text="Receive"
           @click="getFiles"
         />
       </div>
@@ -30,19 +30,26 @@
           <h1 class="get-files-page__available-files-header">
             {{ 'Available files' }}
           </h1>
-          <button
-            v-for="(file, id) in filesList"
-            :key="id"
-            class="get-files-page__file-btn"
-            type="button"
-            @click="downloadFileById(id)"
-          >
-            <i class="mdi mdi-file-outline get-files-page__file-icon" />
-            <p class="get-files-page__file-name">
-              {{ file.name }}
+          <template v-if="filesList.length">
+            <button
+              v-for="(file, id) in filesList"
+              :key="id"
+              class="get-files-page__file-btn"
+              type="button"
+              @click="downloadFileById(id)"
+            >
+              <i class="mdi mdi-file-outline get-files-page__file-icon" />
+              <p class="get-files-page__file-name">
+                {{ file.name }}
+              </p>
+              <i class="mdi mdi-download get-files-page__file-download-icon" />
+            </button>
+          </template>
+          <template>
+            <p>
+              {{ 'No files available' }}
             </p>
-            <i class="mdi mdi-download get-files-page__file-download-icon" />
-          </button>
+          </template>
         </template>
         <template v-else>
           <p>
