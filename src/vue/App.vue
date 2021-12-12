@@ -1,8 +1,11 @@
 <template>
   <div id="app" class="app__container">
-    <div class="app__main">
+    <div v-if="isLoaded" class="app__main">
       <router-view />
     </div>
+    <p v-else>
+      {{ 'Application initiation' }}
+    </p>
   </div>
 </template>
 
@@ -12,13 +15,14 @@ import { initApi } from '@api'
 export default {
   name: 'app-content',
 
+  data: () => ({
+    isLoaded: false,
+  }),
+
   async created () {
+    this.isLoaded = false
     await initApi()
-    console.log(123)
+    this.isLoaded = true
   },
 }
 </script>
-
-<style lang="scss">
-
-</style>

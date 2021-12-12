@@ -96,11 +96,7 @@ body {
 }
 
 p {
-  line-height: 2;
-
-  @include respond-to-custom($sidebar-hide-bp) {
-    line-height: 1.85;
-  }
+  line-height: 1.2;
 }
 
 h1 {

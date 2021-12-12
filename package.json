@@ -23,7 +23,6 @@
     "crypto-js": "^4.1.1",
     "csprng": "^0.1.2",
     "curve25519-js": "^0.0.4",
-    "generate-password": "^1.7.0",
     "husky": "^6.0.0",
     "ipfs-http-client": "^47.0.1",
     "jsona": "^1.8.0",

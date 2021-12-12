@@ -5,21 +5,21 @@
         class="navbar__link"
         :to="vueRoutes.generate"
       >
-        {{ 'Create Seed' }}
+        {{ 'Key pair generation' }}
       </router-link>
 
       <router-link
         class="navbar__link"
         :to="vueRoutes.uploadFile"
       >
-        {{ 'Upload File' }}
+        {{ 'File uploading' }}
       </router-link>
 
       <router-link
         class="navbar__link"
         :to="vueRoutes.getFiles"
       >
-        {{ 'Create Seed' }}
+        {{ 'Receive files' }}
       </router-link>
     </div>
   </nav>
@@ -35,7 +35,9 @@ export default {
     vueRoutes,
   }),
 
-  computed: {},
+  computed: {
+
+  },
 }
 </script>
 
@@ -63,5 +65,21 @@ export default {
   & + & {
     margin-left: 2rem;
   }
+
+  &.router-link-active {
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 2.4rem;
+      height: 0.2rem;
+      position: absolute;
+      bottom: -0.8rem;
+      left: calc(50% - 1.2rem);
+      background: $col-text;
+    }
+  }
 }
+
 </style>

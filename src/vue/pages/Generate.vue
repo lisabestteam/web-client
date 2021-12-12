@@ -20,13 +20,6 @@
       <p class="generate-page__key">
         {{ privateKey.toString() }}
       </p>
-
-      <h4 class="generate-page__header">
-        {{ 'Shared secret' }}
-      </h4>
-      <p class="generate-page__key">
-        {{ sharedSecret.toString() }}
-      </p>
     </div>
   </div>
 </template>
@@ -42,7 +35,6 @@ export default {
   data: () => ({
     publicKey: '',
     privateKey: '',
-    sharedSecret: '',
   }),
 
   methods: {
@@ -63,6 +55,7 @@ export default {
 .generate-page__content {
   max-width: 75.2rem;
 }
+
 .generate-page__header {
   margin-top: 3.2rem;
   font-size: 1.4rem;
